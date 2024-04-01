@@ -1,26 +1,42 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <!-- <button @click="show = !show">Menu</button> -->
+  <Transition name="fade">
+    <Header/>
+  </Transition>
+  <Productos/>
+  <Cursos/>
+  <Blog/>
+  <Footer/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import '../src/css/normalize.css'
+import '../src/css/app.css'
+import Header from './components/Header.vue';
+import Productos from './components/Productos.vue';
+import Cursos from './components/Cursos.vue';
+import Blog from './components/Blog.vue';
+import Footer from './components/Footer.vue';
+
+
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Header,
+    Productos,
+    Cursos,
+    Blog,
+    Footer
+  },
+  data() {
+    return {
+      show: false,
+    }
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+
